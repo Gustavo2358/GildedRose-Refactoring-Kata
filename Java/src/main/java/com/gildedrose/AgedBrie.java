@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrie {
+public final class AgedBrie implements ItemCommand{
 
     private final Item item;
 
@@ -8,7 +8,7 @@ public class AgedBrie {
         this.item = item;
     }
 
-    public void updateAgedBrie() {
+    public void execute() {
         item.quality = item.sellIn < 1 ?
             Math.min(item.quality + 2, 50):
             Math.min(item.quality + 1, 50);

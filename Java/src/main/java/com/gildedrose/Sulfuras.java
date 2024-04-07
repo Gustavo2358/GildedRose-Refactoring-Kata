@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class Sulfuras {
+public final class Sulfuras implements ItemCommand {
 
     private final Item item;
 
@@ -8,7 +8,7 @@ public class Sulfuras {
         this.item = item;
     }
 
-    public void updateSulfuras() {
+    public void execute() {
     }
 
 }

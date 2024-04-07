@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class DefaultItem {
+public final class DefaultItem implements ItemCommand{
 
     private final Item item;
 
@@ -8,7 +8,7 @@ public class DefaultItem {
         this.item = item;
     }
 
-    public void updateDefaultItem() {
+    public void execute() {
         item.quality = item.sellIn < 1 ?
             Math.max(item.quality - 2, 0):
             Math.max(item.quality - 1, 0);

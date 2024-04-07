@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePasses {
+public final class BackstagePasses implements ItemCommand{
 
     private final Item item;
 
@@ -8,7 +8,7 @@ public class BackstagePasses {
         this.item = item;
     }
 
-    public void updatedBackstagePasses() {
+    public void execute() {
         item.quality = Math.min(updateBackstagePassesQuality(), 50);
         item.sellIn = item.sellIn - 1;
     }
