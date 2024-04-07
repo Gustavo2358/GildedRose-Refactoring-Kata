@@ -8,11 +8,23 @@ public class ItemFactory {
 
     public static ItemCommand create(Item item) {
         return switch (item.name) {
-            case AGED_BRIE -> new AgedBrie(item);
-            case BACKSTAGE_PASSES -> new BackstagePasses(item);
-            case SULFURAS -> new Sulfuras(item);
+            case String s when isAgedBrie(s) -> new AgedBrie(item);
+            case String s when isBackstagePasses(s) -> new BackstagePasses(item);
+            case String s when isSulfuras(s) -> new Sulfuras(item);
             default -> new DefaultItem(item);
         };
+    }
+
+    private static boolean isAgedBrie(String s) {
+        return s.equals(AGED_BRIE);
+    }
+
+    private static boolean isSulfuras(String s) {
+        return s.equals(SULFURAS);
+    }
+
+    private static boolean isBackstagePasses(String s) {
+        return s.equals(BACKSTAGE_PASSES);
     }
 
 }
