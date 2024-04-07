@@ -19,13 +19,14 @@ class GildedRose {
                 item.quality = Math.min(updateBackstagePassesQuality(item), 50);
                 item.sellIn = item.sellIn - 1;
                 return;
-            } else {
-                if (!isSulfuras(item)) {
-                    item.quality = item.sellIn < 1 ?
-                        Math.max(item.quality - 2, 0):
-                        Math.max(item.quality - 1, 0);
-                    item.sellIn = item.sellIn - 1;
-                }
+            } else if (isSulfuras(item)) {
+
+            }
+            else {
+                item.quality = item.sellIn < 1 ?
+                    Math.max(item.quality - 2, 0):
+                    Math.max(item.quality - 1, 0);
+                item.sellIn = item.sellIn - 1;
             }
         }
     }
