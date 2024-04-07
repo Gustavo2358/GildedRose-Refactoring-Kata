@@ -162,21 +162,25 @@ class GildedRoseTest {
     @Test
     void conjuredItemsShouldDegradeTwiceAsFastAsNormalItems() {
         Item[] items = new Item[] {
-            new Item("Conjured", 5, 10),
-            new Item("Conjured Mana Cake", 3, 1)
+            new Item("Conjured Phantom Blade", 5, 10),
+            new Item("Conjured Mana Cake", 3, 1),
+            new Item("Conjured Eclipsed Sunstone", 1, 15)
         };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
         assertEquals(8,app.items[0].quality);
         assertEquals(0,app.items[1].quality);
+        assertEquals(13,app.items[2].quality);
 
         app.updateQuality();
         assertEquals(6,app.items[0].quality);
         assertEquals(0,app.items[1].quality);
+        assertEquals(9,app.items[2].quality);
 
         app.updateQuality();
         assertEquals(4,app.items[0].quality);
         assertEquals(0,app.items[1].quality);
+        assertEquals(5,app.items[2].quality);
     }
 }
