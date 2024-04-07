@@ -51,15 +51,15 @@ class GildedRose {
         return item.quality + 1;
     }
 
-    private static boolean isSulfuras(Item item) {
+    private boolean isSulfuras(Item item) {
         return item.name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    private static boolean isAgedBrie(Item item) {
+    private boolean isAgedBrie(Item item) {
         return item.name.equals("Aged Brie");
     }
 
-    private static boolean isBackstagePasses(Item item) {
+    private boolean isBackstagePasses(Item item) {
         return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 }
