@@ -14,11 +14,9 @@ class GildedRose {
                     Math.min(item.quality + 2, 50):
                     Math.min(item.quality + 1, 50);
                 item.sellIn = item.sellIn - 1;
-                return;
             } else if (isBackstagePasses(item)) {
                 item.quality = Math.min(updateBackstagePassesQuality(item), 50);
                 item.sellIn = item.sellIn - 1;
-                return;
             } else if (isSulfuras(item)) {
 
             }
