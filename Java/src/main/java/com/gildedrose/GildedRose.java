@@ -14,20 +14,13 @@ class GildedRose {
             } else if (isBackstagePasses(item)) {
                 new BackstagePasses(item).updatedBackstagePasses();
             } else if (isSulfuras(item)) {
+                new Sulfuras(item).updateSulfuras();
             }
             else {
-                updateDefaultItem(item);
+                new DefaultItem(item).updateDefaultItem();
             }
         }
     }
-
-    private static void updateDefaultItem(Item item) {
-        item.quality = item.sellIn < 1 ?
-            Math.max(item.quality - 2, 0):
-            Math.max(item.quality - 1, 0);
-        item.sellIn = item.sellIn - 1;
-    }
-
 
     private boolean isSulfuras(Item item) {
         return item.name.equals("Sulfuras, Hand of Ragnaros");
